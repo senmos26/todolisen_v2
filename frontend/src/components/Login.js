@@ -12,7 +12,7 @@ export default function Login({ setIsAuthenticated }) {
     e.preventDefault();
     try {
       const response = await axios.post(
-        `${config.REACT_APP_BACK}auth/login`,
+        `${config.REACT_APP_BACK}/auth/login`,
         { email, password },
         { withCredentials: true } // ✅ important pour les cookies
       );
