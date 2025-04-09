@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { FaEdit, FaTrash } from 'react-icons/fa';
 import BackButton from './BackButton';
-
+import config from "../config";
 export default function TaskDetail() {
   const { id } = useParams();
   const navigate = useNavigate(); // Pour la navigation après suppression
