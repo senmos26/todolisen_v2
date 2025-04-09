@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import axios from 'axios'; //j'ai ajouté config
 import { FaEdit, FaTrash } from 'react-icons/fa';
 import BackButton from './BackButton';
 import config from "../config";
