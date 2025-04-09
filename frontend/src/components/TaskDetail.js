@@ -13,11 +13,9 @@ export default function TaskDetail() {
 
   const onDelete = async (taskId) => {
     try {
-      const token = localStorage.getItem('token');
-      await axios.delete(`${process.env.REACT_APP_BACK}/tasks/${taskId}`, {
-        headers: {
-          'Authorization': `Bearer ${token}` // Inclure le token dans les en-têtes
-        },
+   
+      await axios.delete(`${config.REACT_APP_BACK}/tasks/${taskId}`, {
+       
         withCredentials: true
       });
       navigate('/tasks'); // Redirige vers la liste des tâches après suppression
@@ -31,10 +29,8 @@ export default function TaskDetail() {
     const fetchTask = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await axios.get(`${process.env.BACK}/tasks/${id}`, {
-          headers: {
-            'Authorization': `Bearer ${token}` // Inclure le token dans les en-têtes
-          },
+        const response = await axios.get(`${config.REACT_APP_BACK}/tasks/${id}`, {
+        
           withCredentials: true
         });
         setTask(response.data.task);
