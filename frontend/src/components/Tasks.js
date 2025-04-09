@@ -9,7 +9,7 @@ export default function Tasks() {
 
   useEffect(() => {
     // Récupérer le token du localStorage
-    const token = localStorage.getItem('token'); // Assurer que le token est stocké avec ce nom
+  // Assurer que le token est stocké avec ce nom
 
     // Envoyer une requête GET avec le token d'authentification
     axios
@@ -28,8 +28,7 @@ export default function Tasks() {
 
   const onDelete = async (taskId) => {
     try {
-      await axios.delete(`${process.env.BACK}/tasks/${taskId}`, { 
-        headers: { 'Authorization': `Bearer ${localStorage.getItem('token')}` }, // Envoyer le token avec la requête
+      await axios.delete(`${process.env.BACK}/tasks/${taskId}`, {  // Envoyer le token avec la requête
         withCredentials: true
       });
       setTasks(tasks.filter((task) => task._id !== taskId)); // Met à jour la liste des tâches
