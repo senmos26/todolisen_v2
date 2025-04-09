@@ -14,10 +14,7 @@ export default function Tasks() {
     // Envoyer une requête GET avec le token d'authentification
     axios
       .get(`${config.REACT_APP_BACK}/tasks`, {
-        headers: {
-          'Authorization': `Bearer ${token}`  // Utiliser le token JWT pour l'authentification
-        },
-        withCredentials: true // Assurer que les cookies sont envoyés avec la requête
+              withCredentials: true // Assurer que les cookies sont envoyés avec la requête
       })
       .then((response) => {
         setTasks(response.data.tasks);
