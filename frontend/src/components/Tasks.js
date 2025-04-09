@@ -28,7 +28,7 @@ export default function Tasks() {
 
   const onDelete = async (taskId) => {
     try {
-      await axios.delete(`${process.env.BACK}/tasks/${taskId}`, {  // Envoyer le token avec la requête
+      await axios.delete(`${config.REACT_APP_BACK}/tasks/${taskId}`, {  // Envoyer le token avec la requête
         withCredentials: true
       });
       setTasks(tasks.filter((task) => task._id !== taskId)); // Met à jour la liste des tâches
